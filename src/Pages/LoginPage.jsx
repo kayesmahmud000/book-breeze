@@ -29,7 +29,7 @@ const LoginPage = () => {
     }
     return (
         <div className='flex bg-gray-300 min-h-screen items-center justify-center'>
-        <div className="card bg-base-100 w-full max-w-xl shadow-2xl">
+        <div className="card px-4 bg-base-100 w-full max-w-xl shadow-2xl">
         <h3 className='text-4xl font-bold text-center my-6'> Login Your Account</h3>
             <form onSubmit={handleLogin} className="card-body">
                

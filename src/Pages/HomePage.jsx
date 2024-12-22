@@ -1,9 +1,13 @@
-import React from 'react';
+
+
+import Slider from '../components/Slider';
 
 const HomePage = () => {
     return (
         <div>
-            Book Breeze Home
+          <section className='container mx-auto px-4'>
+            <Slider></Slider>
+          </section>
         </div>
     );
 };
