@@ -7,6 +7,7 @@ import BorrowedBooksPage from "../Pages/BorrowedBooksPage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
 import UpdateBookPage from "../Pages/UpdateBookPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -20,20 +21,20 @@ const router = createBrowserRouter([
         },
         {
             path:'/allBook',
-            element:<AllBookPage></AllBookPage>
+            element:<PrivateRoute><AllBookPage></AllBookPage></PrivateRoute>
         },
         {
             path:'/addBook',
-            element:<AddBookPage></AddBookPage>
+            element:<PrivateRoute><AddBookPage></AddBookPage></PrivateRoute>
         },
         {
             path:"/updatePage/:id",
-            element:<UpdateBookPage></UpdateBookPage>,
+            element:<PrivateRoute><UpdateBookPage></UpdateBookPage></PrivateRoute>,
             loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/books/${params.id}`)
         },
         {
             path:'/borrowedBooks',
-            element:<BorrowedBooksPage></BorrowedBooksPage>
+            element:<PrivateRoute><BorrowedBooksPage></BorrowedBooksPage></PrivateRoute>
         },
         {
             path:'/login',
