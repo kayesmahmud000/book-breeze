@@ -1,9 +1,14 @@
 import React from 'react';
 import Rating from './Rating';
+import { Link } from 'react-router-dom';
 
 const BookCard = ({book}) => {
     const {photo,name,category,authorName,rating, quantity } = book
     
+    const handleUpdateBook= ()=>{
+        axios.get(`${import.meta.env.VITE_Project_Api_Url}/books/${book._id}`)
+        
+    }
     return (
         <div>
             <div className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
@@ -23,7 +28,7 @@ const BookCard = ({book}) => {
                         <div className=" font-semibold"><span className='font-semibold'>Quantity:</span> {quantity}</div>
                     </div>
                     <div className='flex justify-end'>
-                        <button className='btn btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black'>Update</button>
+                       <Link to={`/updatePage/${book._id}`}> <button onClick={handleUpdateBook} className='btn btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black'>Update</button></Link>
                     </div>
                 </div>
             </div>

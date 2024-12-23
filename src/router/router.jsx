@@ -6,6 +6,7 @@ import AddBookPage from "../Pages/AddBookPage";
 import BorrowedBooksPage from "../Pages/BorrowedBooksPage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
+import UpdateBookPage from "../Pages/UpdateBookPage";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         {
             path:'/addBook',
             element:<AddBookPage></AddBookPage>
+        },
+        {
+            path:"/updatePage/:id",
+            element:<UpdateBookPage></UpdateBookPage>,
+            loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/books/${params.id}`)
         },
         {
             path:'/borrowedBooks',
