@@ -47,12 +47,12 @@ const AddBookPage = () => {
                             <label className="label">
                                 <span className="label-text">Category </span>
                             </label>
-                            <select name="category" id=" book" className="input input-bordered w-full">
-                                <option value="Student" className='text-gray-400'>Select the Book Category</option>
-                                <option value="Student">Thriller</option>
-                                <option value="Tourist"> History</option>
-                                <option value="Official">Drama</option>
-                                <option value="Official">Sci-Fi</option>
+                            <select name="category" id=" book" defaultValue={'Select the Book Category'} className="input input-bordered w-full">
+                                <option disabled className=''>Select the Book Category</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="History"> History</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Sci-Fi">Sci-Fi</option>
                             </select>
                         </div>
                         <div className="form-control md:w-1/2">
