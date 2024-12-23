@@ -9,6 +9,7 @@ import RegisterPage from "../Pages/RegisterPage";
 import UpdateBookPage from "../Pages/UpdateBookPage";
 import PrivateRoute from "./PrivateRoute";
 import CategoryBookPage from "../Pages/CategoryBookPage";
+import DetailsPage from "../Pages/DetailsPage";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
             path:'/categoryBookPage/:category',
             element:<CategoryBookPage></CategoryBookPage>,
             loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/category/${params.category}`)
+
+        },
+        {
+            path:"/detailsPage",
+            element:<DetailsPage></DetailsPage>
 
         },
         {
