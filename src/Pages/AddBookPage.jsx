@@ -93,33 +93,7 @@ const AddBookPage = () => {
                             <textarea name='content' className="textarea textarea-bordered" placeholder="book content" required></textarea>
                         </div>
                     </div>
-                    {/* <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
-                            <label className="label">
-                                <span className="label-text">Application Method</span>
-                            </label>
-                            <input type="text" name="application_method" placeholder="Application method" className="input input-bordered w-full" required />
-                        </div>
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text">Required_documents</span>
-                            </label>
-                            <div className='grid grid-cols-2 gap-2 justify-between'>
-                                <label>
-                                    <input type="checkbox" name="validPassport" value={'Valid passport'} checked={validPassport} onChange={(e) => setValidPassport(e.target.value)} />
-                                    <span className="label-text"> Valid passport</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="visaApplication" value={" Visa application form"} checked={visaApplication} onChange={(e) => setVisaApplication(e.target.value)} />
-                                    <span className="label-text"> Visa application form</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="recentPassport" value={"Recent passport-sized photograph"} checked={recentPassport} onChange={(e) => setRecentPassport(e.target.value)} />
-                                    <span className="label-text"> Recent passport-sized photograph</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div> */}
+                  
                     <div className="form-control mt-6">
                         <button className="btn bg-[#4DA1A9] hover:border-[#4DA1A9] text-white hover:bg-white hover:text-black">Add new Book</button>
                     </div>

@@ -1,21 +1,25 @@
+import React, { useEffect, useState } from 'react';
+import PageHeading from './PageHeading';
+import { FaArrowRight } from 'react-icons/fa';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Rating from './Rating';
 
-
-import { Link, useLoaderData } from 'react-router-dom';
-
-import { FaArrowLeft } from 'react-icons/fa';
-import Rating from '../components/Rating';
-
-const CategoryBookPage = () => {
-    const categoryBooks = useLoaderData()
-
+const LeatestBooks = () => {
+    const [books, setBooks]=useState([])
+    useEffect(()=>{
+        axios.get(`${import.meta.env.VITE_Project_Api_Url}/latest-book`)
+        .then(res=>setBooks(res.data))
+    },[])
     return (
-        <div className='container mx-auto my-10'>
-            <div className="my-10">
-                <Link to={"/"}><button className="btn btn-xs md:btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black"><FaArrowLeft />Go Back</button></Link>
-            </div>
-           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
+        <div>
+             <div className='flex justify-center items-start mt-16 -mb-5'>
+                       <p className='text-center font-bold text-gray-500 flex gap-1 items-center'><FaArrowRight />Latest </p>
+                       </div>
+            <PageHeading title={ 'Latest Books'} subtitle={'Discover the Newest Additions to Our Collection'}></PageHeading>
+            <div className='grid grid-cols-1 my-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
            {
-                categoryBooks.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
+                books.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
                     <figure>
                         <img className='w-full h-[380px] '
                             src={book.photo}
@@ -42,4 +46,4 @@ const CategoryBookPage = () => {
     );
 };
 
-export default CategoryBookPage;
+export default LeatestBooks;

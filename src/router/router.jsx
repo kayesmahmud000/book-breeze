@@ -36,14 +36,14 @@ const router = createBrowserRouter([
         },
         {
             path:'/categoryBookPage/:category',
-            element:<CategoryBookPage></CategoryBookPage>,
+            element:<PrivateRoute><CategoryBookPage></CategoryBookPage></PrivateRoute>,
             loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/category/${params.category}`)
 
         },
         {
-            path:"/detailsPage",
-            element:<DetailsPage></DetailsPage>
-
+            path:"/detailsPage/:id",
+            element:<PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>,
+            loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/books/${params.id}`)
         },
         {
             path:'/borrowedBooks',
