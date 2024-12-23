@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import AuthContext from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
     const {signinUser, socialLogin}=useContext(AuthContext)
+    const [errorMassage, setErrorMassage ]=useState("")
+    const location =useLocation()
+    const navigate= useNavigate()
     const handleLogin =e =>{
         e.preventDefault()
         const form= e.target
@@ -13,18 +17,28 @@ const LoginPage = () => {
         signinUser(email, password)
         .then(result=>{
             console.log(result.user)
+            toast.success("Login Success")
+            navigate(location.state? location.state:"/")
+
         })
         .catch(err=>{
-            console.log(err)
+            
+            const massage= err.code
+            
+            setErrorMassage(massage)
+            toast.error("Login Failed")
         })
     }
     const handleSocial=()=>{
         socialLogin()
         .then(result=>{
             console.log()
+            navigate(location.state? location.state:"/")
+            toast.success("Login Success")
         })
         .catch(err=>{
             console.log(err)
+            toast.error("Login Failed")
         })
     }
     return (
@@ -48,6 +62,11 @@ const LoginPage = () => {
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
+                    {
+                        errorMassage &&  <label className="label">
+                        <span className="label-text text-sm text-red-500">{errorMassage}</span>
+                    </label>
+                       }
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn bg-[#3385ff] text-white hover:text-black">Login</button>

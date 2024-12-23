@@ -1,11 +1,13 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from 'react';
 import AuthContext from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
     const {signUpUser, setUser,socialLogin, updateUser}=useContext(AuthContext)
     const [errorMassage, setErrorMassage ]=useState('')
+    const location =useLocation()
     const navigate= useNavigate()
     const handleRegisterFrom = e =>{
         e.preventDefault()
@@ -31,7 +33,8 @@ const RegisterPage = () => {
             setUser(user)
             updateUser({displayName:name, photoURL:photo})
             .then(()=>{
-                navigate('/')
+                navigate(location.state? location.state:"/")
+                toast.success("Login Success")
                 // toast.success("Register Successful")
             })
             .catch((error) => {
@@ -44,6 +47,7 @@ const RegisterPage = () => {
         })
         .catch(err=>{
             console.log(err)
+            toast.error("Login Failed")
         })
 
     }
@@ -51,9 +55,12 @@ const RegisterPage = () => {
         socialLogin()
         .then(result=>{
             console.log()
+            navigate(location.state? location.state:"/")
+            toast.success("Login Success")
         })
         .catch(err=>{
             console.log(err)
+            toast.error("Login Failed")
         })
     }
     return (

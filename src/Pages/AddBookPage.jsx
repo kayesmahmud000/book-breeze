@@ -1,5 +1,6 @@
 import axios from "axios";
 import PageHeading from "../components/PageHeading";
+import Swal from "sweetalert2";
 
 
 const AddBookPage = () => {
@@ -17,7 +18,21 @@ const AddBookPage = () => {
         
 
          axios.post(`${import.meta.env.VITE_Project_Api_Url}/add-book`,bookData)
-         .then(res=> console.log(res.data))
+         .then(res=>{
+            const data=res.data
+            if(data.insertedId){
+                Swal.fire({
+                    position: "top-end",
+                        title: 'Success!',
+                        text: 'A New Book Added successfully',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                       heightAuto:true
+                  })
+                  form.reset()
+            }
+         } )
        
     }
     return (

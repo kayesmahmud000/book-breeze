@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import PageHeading from "../components/PageHeading";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const UpdateBookPage = () => {
     const book= useLoaderData()
@@ -26,7 +27,18 @@ const UpdateBookPage = () => {
             body:JSON.stringify(updateBookData)
         } )
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    position: "top-end",
+                        title: 'Success!',
+                        text: 'Book Update successfully',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                       heightAuto:true
+                  })
+            }})
         
     }
     return (

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +24,7 @@ const BookCard = ({book}) => {
                     </h2>
                     <p className='font-bold'>By- {authorName}</p>
                     <div className="flex items-center justify-between">
-                    <div className="review-rating text-yellow-500">
+                    <div className="review-rating  text-yellow-500">
               {"★".repeat(rating) + "☆".repeat(5 - rating)}
             </div>
                         {/* <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div> */}
