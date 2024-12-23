@@ -9,7 +9,7 @@ const AllBookPage = () => {
     const [allBooks, setAllBooks]=useState([])
     const [viewType, setViewType] = useState('card');
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_Project_Api_Url}/all-jobs`)
+        axios.get(`${import.meta.env.VITE_Project_Api_Url}/all-books`)
         .then(res=>setAllBooks(res.data))
     },[])
 

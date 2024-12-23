@@ -27,7 +27,7 @@ const BookTable = ({allBooks}) => {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {allBooks.map((book) => (
-            <tr key={book.id}>
+            <tr key={book._id}>
               <td className="px-6 py-4 whitespace-nowrap">
                 <img className="w-16 h-16 object-cover" src={book.photo} alt={book.name} />
               </td>

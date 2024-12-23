@@ -28,13 +28,13 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <IoMdMenu />
+                    <div className="dropdown ">
+                        <div tabIndex={0} role="button" className="mr-2 lg:hidden">
+                        <IoMdMenu size={28} />
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 p-2 w-32 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10]  p-2 w-32 shadow">
                                 {link}
                         </ul>
                     </div>
