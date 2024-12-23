@@ -17,7 +17,7 @@ const Slider = () => {
       modules={[Navigation, Pagination, Scrollbar,Autoplay, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      autoplay
+      autoplay={{ delay: 1500 }}
       // navigation
       pagination={{ clickable: true }}
       

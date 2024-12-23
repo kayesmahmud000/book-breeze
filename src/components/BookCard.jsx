@@ -1,5 +1,4 @@
 import React from 'react';
-import Rating from './Rating';
 import { Link } from 'react-router-dom';
 
 const BookCard = ({book}) => {
@@ -24,7 +23,10 @@ const BookCard = ({book}) => {
                     </h2>
                     <p className='font-bold'>By- {authorName}</p>
                     <div className="flex items-center justify-between">
-                        <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div>
+                    <div className="review-rating text-yellow-500">
+              {"★".repeat(rating) + "☆".repeat(5 - rating)}
+            </div>
+                        {/* <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div> */}
                         <div className=" font-semibold"><span className='font-semibold'>Quantity:</span> {quantity}</div>
                     </div>
                     <div className='flex justify-end'>
