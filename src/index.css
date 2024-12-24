@@ -6,3 +6,24 @@ body{
     overflow: scroll;
     overflow-x: hidden;
 }
+
+body{
+    font-family: Lato;
+   
+    margin: 0;
+    padding: 0;
+}
+body.light {
+    --background-color: white;
+    --text-color: black;
+}
+
+body.dark {
+    --background-color: black;
+    --text-color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

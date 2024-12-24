@@ -1,5 +1,7 @@
 import { FaArrowRight } from 'react-icons/fa';
 import BannerImg from '../assets/banner1.png'
+import { motion } from "motion/react"
+
 
 const Banner1 = () => {
     return (
@@ -8,7 +10,19 @@ const Banner1 = () => {
                 <div className="hero-content flex-col text-black lg:flex-row  ">
 
                     <div>
-                        <h1 className=" text-2xl text-gray-100 lg:text-6xl  w-5/6 font-bold">Discover New Worlds with Book Breeze
+                        <h1 className=" text-2xl text-gray-100 lg:text-6xl  w-5/6 
+                        font-bold">Discover New Worlds with
+
+                            <motion.span
+                                className='ml-2 '
+                                animate={{
+                                    color: [' #e6e6e6', ' #ff4d4d', '#ffad33'
+
+                                    ]
+                                }}
+                                transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                                Book Breeze</motion.span>
                         </h1>
                         <p className="py-6  text-xs lg:text-lg text-gray-200">
                             From timeless classics to modern bestsellers, our library offers a world of books waiting to be discovered. Find your next favorite read and embark on new adventures today

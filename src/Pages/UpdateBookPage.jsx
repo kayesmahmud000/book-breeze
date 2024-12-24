@@ -46,7 +46,7 @@ const UpdateBookPage = () => {
         <div className="max-w-7xl mx-auto">
               <TitleHelmet title={'Update'}></TitleHelmet>
           
-             <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
+             <div className="card rounded-none text-black bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
              <PageHeading title={"Modify Book Information"} subtitle={"Update the book details to reflect the most current information."}></PageHeading>
                 <form onSubmit={handleUpdateBook} className="card-body">
                     {/* 1st row */}

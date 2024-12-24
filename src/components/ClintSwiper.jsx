@@ -102,7 +102,7 @@ const ClintSwiper = () => {
         modifier: 1,
         slideShadows: true,
       }}
-      autoplay={{ delay: 1500 }}
+      autoplay={{ delay: 1500, reverseDirection:true}}
      
       modules={[EffectCoverflow, Autoplay, Pagination]}
       className="mySwiper lg:h-[300px] lg:w-[1400px] mx-auto"
@@ -115,7 +115,7 @@ const ClintSwiper = () => {
               alt={review.name}
               className="review-img mx-auto mb-3  rounded-full w-24 h-24 object-cover"
             />
-            <h3 className="review-name text-lg font-semibold">{review.name}</h3>
+            <h3 className="review-name text-lg text-gray-800 font-semibold">{review.name}</h3>
             <p className="review-opinion text-sm text-gray-800">{review.opinion}</p>
             <div className="review-rating text-yellow-500">
               {"★".repeat(review.rating) + "☆".repeat(5 - review.rating)}

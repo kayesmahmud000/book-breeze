@@ -89,7 +89,7 @@ const DetailsPage = () => {
            <div className="my-10">
            <PageHeading title={'Book Details'} subtitle={'Discover more about the book'}></PageHeading>
            </div>
-            <div className="card flex flex-col md:flex-row card-side bg-gray-300 shadow-xl">
+            <div className="card flex flex-col md:flex-row card-side bg-gray-400 shadow-xl" data-aos="zoom-in" data-aos-duration="3000">
                 <figure>
                     <img
                         src={book.photo}
@@ -119,7 +119,7 @@ const DetailsPage = () => {
             </div>
             {isModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white text-center justify-center items-start p-6 rounded-md shadow-md">
+                    <div className="bg-white text-black text-center justify-center items-start p-6 rounded-md shadow-md">
                         <form onSubmit={handleBorrow} className="card-body">
                             <div className="mb-4">
                                 <div className="form-control">

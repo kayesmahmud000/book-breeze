@@ -44,7 +44,7 @@ const AddBookPage = () => {
     return (
         <div>
             <TitleHelmet title={'Add Book'}></TitleHelmet>
-            <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
+            <div className="card rounded-none text-black bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
                 <PageHeading title={"Add a New Book to Your Collection"} subtitle={"Fill in the details below to expand our library with another great read"}></PageHeading>
 
                 <form onSubmit={handleAddBook} className="card-body">

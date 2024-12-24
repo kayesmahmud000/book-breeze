@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
     return (
@@ -12,7 +13,18 @@ const Banner = () => {
                 <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content text-white text-center">
                     <div className="max-w-2xl">
-                        <h1 className="mb-5 text-3xl md:text-6xl font-bold">Your Reading Journey Begins Here..</h1>
+                        <h1 className="mb-5 text-3xl md:text-6xl font-bold">
+                        <Typewriter
+                                words={[" Your Reading Journey Begins Here"]}
+                                loop={1}
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={100}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+
+                            />
+                           </h1>
                         <p className="mb-5  text-xs lg:text-lg">
                         <span className='font-bold text-lg'>Book Breeze</span> is more than a library; it's a gateway to endless possibilities. Start your reading journey with us and become part of a community that celebrates the love of books.
                         </p>

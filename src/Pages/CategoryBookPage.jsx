@@ -17,7 +17,7 @@ const CategoryBookPage = () => {
             </div>
            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
            {
-                categoryBooks.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
+                categoryBooks.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border" data-aos="zoom-in" data-aos-duration="3000">
                     <figure>
                         <img className='w-full h-[380px] '
                             src={book.photo}

@@ -4,6 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
+import { Fade } from 'react-awesome-reveal';
 
 const LeatestBooks = () => {
     const [books, setBooks] = useState([])
@@ -12,14 +13,16 @@ const LeatestBooks = () => {
             .then(res => setBooks(res.data))
     }, [])
     return (
-        <div>
-            <div className='flex justify-center items-start mt-16 -mb-5'>
+        <div className=''>
+           <Fade direction='down'>
+           <div className='flex justify-center items-start mt-16 -mb-5'>
                 <p className='text-center font-bold text-gray-500 flex gap-1 items-center'><FaArrowRight />Latest </p>
             </div>
+           </Fade>
             <PageHeading title={'Latest Books'} subtitle={'Discover the Newest Additions to Our Collection'}></PageHeading>
             <div className='grid grid-cols-2 my-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-8'>
                 {
-                    books.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
+                    books.map(book => <div key={book._id} className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border"  data-aos="zoom-in" data-aos-duration="3000">
                         <figure>
                             <img className='w-full h-[380px] '
                                 src={book.photo}
@@ -31,7 +34,7 @@ const LeatestBooks = () => {
                                 <div className="badge badge-outline font-normal ml-2">{book.category}</div>
                             </h2>
                             <p className='md:font-bold'>By- {book.authorName}</p>
-                            <div className="flex flex-col md:flex-row  items-center md:justify-between">
+                            <div className="">
                                 <div className="review-rating text-yellow-500">
                                     {"★".repeat(book.rating) + "☆".repeat(5 - book.rating)}
                                 </div>

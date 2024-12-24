@@ -1,5 +1,6 @@
 import { FaArrowRight } from 'react-icons/fa';
 import bannerImg2 from '../assets/bnner2.png'
+import { Typewriter } from 'react-simple-typewriter';
 
 const Banner2 = () => {
     return (
@@ -10,7 +11,18 @@ const Banner2 = () => {
                         src={bannerImg2}
                         className="lg:max-w-lg lg:h-[400px] rounded-lg " />
                     <div className=''>
-                        <h1 className="text-2xl text-start lg:text-5xl font-bold">From Classics to Modern Hits, We've Got It All</h1>
+                        <h1 className="text-2xl text-start lg:text-5xl font-bold">
+                        <Typewriter
+                                words={[" From Classics to Modern Hits, We've Got It All"]}
+                                loop={2}
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={100}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+
+                            />
+                           </h1>
                         <p className="py-6 text-xs lg:text-lg">
                         Our diverse collection spans genres, eras, and interests, ensuring you'll find exactly what you're looking for. <span className='font-bold text-lg'>Book Breeze.</span>
                         </p>

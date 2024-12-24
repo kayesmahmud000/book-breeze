@@ -11,7 +11,7 @@ const BookCard = ({book}) => {
     }
     return (
         <div>
-            <div className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border">
+            <div className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border" data-aos="zoom-in" data-aos-duration="3000">
                 <figure>
                     <img className='w-full h-[380px] '
                         src={photo}
@@ -24,11 +24,12 @@ const BookCard = ({book}) => {
                     </h2>
                     <p className='md:font-bold'>By- {authorName}</p>
                     <div className="">
+                    <div className=" font-semibold"><span className='font-semibold'>Quantity:</span> {quantity}</div>
                     <div className="review-rating  text-yellow-500"><span className='font-semibold text-black mr-1'>Rating:</span>
               {"★".repeat(rating) + "☆".repeat(5 - rating)}
             </div>
                         {/* <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div> */}
-                        <div className=" font-semibold"><span className='font-semibold'>Quantity:</span> {quantity}</div>
+                       
                     </div>
                     <div className='flex mt-2 justify-end'>
                        <Link to={`/updatePage/${book._id}`}> <button onClick={handleUpdateBook} className='btn btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black'>Update</button></Link>

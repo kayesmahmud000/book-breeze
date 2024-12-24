@@ -45,7 +45,7 @@ const BorrowedBooksPage = () => {
             <PageHeading title={'My Borrowed Books'} subtitle={"View and manage the books you've borrowed from the library"}></PageHeading>
            <div className='grid my-10 grid-cols-2 md:grid-cols-3  gap-2 md:gap-8'>
            {
-                borrowBooks.map(book=> <div key={book._id} className="card md:h-[280px] rounded-none md:rounded-lg flex flex-col md:flex-row card-side bg-gray-300 shadow-xl">
+                borrowBooks.map(book=> <div key={book._id} className="card md:h-[280px] rounded-none md:rounded-lg flex flex-col md:flex-row card-side bg-gray-300 shadow-xl" data-aos="zoom-in" data-aos-duration="3000">
                     <figure className=''>
                         <img
                             src={book.photo}
