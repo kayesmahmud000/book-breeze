@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import PageHeading from "../components/PageHeading";
 import axios from "axios";
 import Swal from "sweetalert2";
+import TitleHelmet from "../components/TitleHelmet";
 
 const UpdateBookPage = () => {
     const book= useLoaderData()
@@ -43,6 +44,7 @@ const UpdateBookPage = () => {
     }
     return (
         <div className="max-w-7xl mx-auto">
+              <TitleHelmet title={'Update'}></TitleHelmet>
           
              <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
              <PageHeading title={"Modify Book Information"} subtitle={"Update the book details to reflect the most current information."}></PageHeading>

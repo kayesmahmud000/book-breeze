@@ -4,12 +4,14 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 import { FaArrowLeft } from 'react-icons/fa';
 import Rating from '../components/Rating';
+import TitleHelmet from '../components/TitleHelmet';
 
 const CategoryBookPage = () => {
     const categoryBooks = useLoaderData()
 
     return (
         <div className='container mx-auto my-10'>
+           
             <div className="my-10">
                 <Link to={"/"}><button className="btn btn-xs md:btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black"><FaArrowLeft />Go Back</button></Link>
             </div>
@@ -35,7 +37,9 @@ const CategoryBookPage = () => {
                             <Link to={`/detailsPage/${book._id}`}> <button  className='btn btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black'>Details</button></Link>
                         </div>
                     </div>
+                    <TitleHelmet title={book.category}></TitleHelmet>
                 </div>)
+                
             }
            </div>
         </div>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import PageHeading from "../components/PageHeading";
 import Swal from "sweetalert2";
+import TitleHelmet from "../components/TitleHelmet";
 
 
 const AddBookPage = () => {
@@ -37,6 +38,7 @@ const AddBookPage = () => {
     }
     return (
         <div>
+            <TitleHelmet title={'Add Book'}></TitleHelmet>
             <div className="card rounded-none bg-[#f2faef] w-full max-w-7xl px-4 mx-auto ">
                 <PageHeading title={"Add a New Book to Your Collection"} subtitle={"Fill in the details below to expand our library with another great read"}></PageHeading>
 
