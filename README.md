@@ -19,7 +19,6 @@ Book Breeze is a comprehensive library management system designed to facilitate 
 - **User Reviews**: Users can leave reviews for books.
 - **Book Details**: Detailed view of each book, including author, category, quantity, and ratings.
 - **User Dashboard**: Users can view and manage their borrowed books.
-- **Admin Panel**: Admins can manage book inventory and user information.
 
 ## Key Pages
 
@@ -27,7 +26,6 @@ Book Breeze is a comprehensive library management system designed to facilitate 
 - **Books Page**: List of all available books.
 - **Book Details Page**: Detailed information about a selected book.
 - **Borrowed Books Page**: Users can view their borrowed books and return them.
-- **Admin Dashboard**: Admins can manage books and users.
 
 ## NPM Packages Used
 
@@ -39,7 +37,6 @@ Book Breeze is a comprehensive library management system designed to facilitate 
 - `express`: A minimal and flexible Node.js web application framework.
 - `cors`: A package to enable Cross-Origin Resource Sharing.
 - `mongodb`: The official MongoDB driver for Node.js.
-- `mongoose`: A MongoDB object modeling tool designed to work in an asynchronous environment.
 - `react-datepicker`: A simple and reusable Datepicker component for React.
 - `tailwindcss`: A utility-first CSS framework for rapidly building custom user interfaces.
 - `react-helmet`: A component to manage changes to the document head.
