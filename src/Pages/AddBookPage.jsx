@@ -2,9 +2,13 @@ import axios from "axios";
 import PageHeading from "../components/PageHeading";
 import Swal from "sweetalert2";
 import TitleHelmet from "../components/TitleHelmet";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 
 const AddBookPage = () => {
+    const {user}=useContext(AuthContext)
+
     const handleAddBook= e =>{
         e.preventDefault()
         const formData =new FormData(e.target);
@@ -15,6 +19,7 @@ const AddBookPage = () => {
 
         bookData.rating =parseInt(rating)
         bookData.quantity= parseInt(quantity)
+        bookData.author_email= user.email
         console.log(bookData)
         
 
@@ -31,7 +36,7 @@ const AddBookPage = () => {
                         timer: 1500,
                        heightAuto:true
                   })
-                  form.reset()
+                 
             }
          } )
        

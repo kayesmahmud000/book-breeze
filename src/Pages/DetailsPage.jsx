@@ -1,4 +1,5 @@
 
+
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
@@ -6,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import TitleHelmet from "../components/TitleHelmet";
+import toast from "react-hot-toast";
 
 const DetailsPage = () => {
     const [isModal, setIsModal] = useState(false);
@@ -15,7 +17,8 @@ const DetailsPage = () => {
     const [book, setBook] = useState([]);
     const [borrowedBooks, setBorrowedBooks] = useState([]);
     const [hasBorrowed, setHasBorrowed] = useState(false);
-
+    const [error, setError] = useState(null);
+    console.log(error)
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_Project_Api_Url}/books/${id}`)
             .then(res => setBook(res.data));
@@ -69,6 +72,10 @@ const DetailsPage = () => {
             // Add the borrowed book to the list of borrowed books
             setBorrowedBooks(prevBorrowedBooks => [...prevBorrowedBooks, borrowData]);
         } catch (error) {
+            if (error.response && error.response.data) {
+                setError(error.response.data.message);
+                toast.error(error.response.data.message)
+            }
             console.error('Error borrowing the book:', error);
         }
     };
