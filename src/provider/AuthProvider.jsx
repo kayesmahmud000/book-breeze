@@ -3,6 +3,7 @@ import { getAuth } from "firebase/auth";
 import AuthContext from '../context/AuthContext';
 import { app } from "../firebase/firebase.init";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const AuthProvider = ({children}) => {
     const [user, setUser]=useState(null)
@@ -29,7 +30,24 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
      const unsubscribe=  onAuthStateChanged(auth, (currentUser)=>{
             setUser(currentUser)
-            setLoader(false)
+
+            if(currentUser?.email){
+                const user={ email: currentUser.email}
+
+                axios.post(`${import.meta.env.VITE_Project_Api_Url}/jwt`, user , {withCredentials:true} )
+                .then(res=>{
+                    console.log(res.data)
+                    setLoader(false)
+                })
+            }else{
+                axios.post(`${import.meta.env.VITE_Project_Api_Url}/logout`, {}, {withCredentials:true})
+                .then(res=>{
+                    console.log('logout', res.data)
+                    setLoader(false)
+                })
+            }
+
+            
         })
 
         return ()=>{

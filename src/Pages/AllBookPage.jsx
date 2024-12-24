@@ -30,7 +30,7 @@ const AllBookPage = () => {
           <div>
           <PageHeading title={'Explore Our Entire Collection'} subtitle={'Browse through all the books in our library, discover new favorites, and update book details.'}></PageHeading>
           </div>
-          <div className="flex justify-between mb-4">
+          <div className="flex my-10 justify-between mb-4">
              <select
                     className="form-select border border-gray-700"
                     value={viewType}

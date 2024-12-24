@@ -29,7 +29,7 @@ const CategoryBookPage = () => {
                             <div className="badge badge-outline font-normal ml-2">{book.category}</div>
                         </h2>
                         <p className='font-bold'>By- {book.authorName}</p>
-                        <div className="flex items-center justify-between">
+                        <div className="">
                             <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{book.rating}</span> </div>
                             <div className=" font-semibold"><span className='font-semibold'>Quantity:</span> {book.quantity}</div>
                         </div>

@@ -8,6 +8,7 @@ import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import TitleHelmet from "../components/TitleHelmet";
 import toast from "react-hot-toast";
+import PageHeading from "../components/PageHeading";
 
 const DetailsPage = () => {
     const [isModal, setIsModal] = useState(false);
@@ -17,8 +18,7 @@ const DetailsPage = () => {
     const [book, setBook] = useState([]);
     const [borrowedBooks, setBorrowedBooks] = useState([]);
     const [hasBorrowed, setHasBorrowed] = useState(false);
-    const [error, setError] = useState(null);
-    console.log(error)
+   
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_Project_Api_Url}/books/${id}`)
             .then(res => setBook(res.data));
@@ -26,7 +26,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         // Fetch the list of books the user has currently borrowed
-        axios.get(`${import.meta.env.VITE_Project_Api_Url}/borrowed-books/${user.email}`)
+        axios.get(`${import.meta.env.VITE_Project_Api_Url}/borrow-book?email=${user.email}`)
             .then(res => setBorrowedBooks(res.data));
     }, [user.email]);
 
@@ -71,9 +71,10 @@ const DetailsPage = () => {
 
             // Add the borrowed book to the list of borrowed books
             setBorrowedBooks(prevBorrowedBooks => [...prevBorrowedBooks, borrowData]);
+            toast.success('Book added the borrow list')
         } catch (error) {
             if (error.response && error.response.data) {
-                setError(error.response.data.message);
+               
                 toast.error(error.response.data.message)
             }
             console.error('Error borrowing the book:', error);
@@ -81,8 +82,13 @@ const DetailsPage = () => {
     };
 
     return (
-        <div className="max-w-4xl flex min-h-screen items-center justify-center px-4 mx-auto my-10">
+       <>
+       
+        <div className="max-w-4xl flex flex-col items-center justify-center px-4 mx-auto  my-10">
             <TitleHelmet title={'Details'} />
+           <div className="my-10">
+           <PageHeading title={'Book Details'} subtitle={'Discover more about the book'}></PageHeading>
+           </div>
             <div className="card flex flex-col md:flex-row card-side bg-gray-300 shadow-xl">
                 <figure>
                     <img
@@ -90,7 +96,7 @@ const DetailsPage = () => {
                         alt={book.name}
                         className="h-full w-80" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body w-5/6">
                     <h2 className="card-title">{book.name}</h2>
                     <p><strong>Author:</strong> {book.authorName}</p>
                     <p><strong>Category:</strong> {book.category}</p>
@@ -147,6 +153,7 @@ const DetailsPage = () => {
                 </div>
             )}
         </div>
+       </>
     );
 };
 

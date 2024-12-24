@@ -23,8 +23,8 @@ const BookCard = ({book}) => {
                        <div className="badge badge-outline font-normal ml-2">{category}</div> 
                     </h2>
                     <p className='md:font-bold'>By- {authorName}</p>
-                    <div className="flex flex-col md:flex-row items-center justify-between">
-                    <div className="review-rating  text-yellow-500">
+                    <div className="">
+                    <div className="review-rating  text-yellow-500"><span className='font-semibold text-black mr-1'>Rating:</span>
               {"★".repeat(rating) + "☆".repeat(5 - rating)}
             </div>
                         {/* <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div> */}
