@@ -61,7 +61,7 @@ const DetailsPage = () => {
 
         try {
             const response = await axios.patch(`${import.meta.env.VITE_Project_Api_Url}/borrow-book/${book._id}`, borrowData);
-            console.log(response.data);
+            // console.log(response.data);
 
             // Update the book's quantity locally
             setBook(prevBook => ({

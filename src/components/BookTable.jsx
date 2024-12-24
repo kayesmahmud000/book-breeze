@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const BookTable = ({allBooks}) => {
-    console.log(allBooks)
+    // console.log(allBooks)
     const handleUpdateBook= id=>{
         axios.get(`${import.meta.env.VITE_Project_Api_Url}/books/${id}`)
         

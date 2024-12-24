@@ -26,7 +26,7 @@ const RegisterPage = () => {
             setErrorMassage('must have an Uppercase letter, a lowercase letter')
             return
         }
-        console.log(name, email, photo, password)
+        // console.log(name, email, photo, password)
         signUpUser(email, password)
 
         .then(result=>{
@@ -42,12 +42,12 @@ const RegisterPage = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ..
-                console.log( errorCode ,errorMessage)
+                // console.log( errorCode ,errorMessage)
                 // toast.error("Login Filed")
               });
         })
         .catch(err=>{
-            console.log(err)
+            // console.log(err)
             toast.error("Login Failed")
         })
 
@@ -55,12 +55,12 @@ const RegisterPage = () => {
     const handleSocial=()=>{
         socialLogin()
         .then(result=>{
-            console.log()
+            // console.log()
             navigate(location.state? location.state:"/")
             toast.success("Login Success")
         })
         .catch(err=>{
-            console.log(err)
+            // console.log(err)
             toast.error("Login Failed")
         })
     }

@@ -6,18 +6,18 @@ import TitleHelmet from "../components/TitleHelmet";
 
 const UpdateBookPage = () => {
     const book= useLoaderData()
-    console.log(book)
+    // console.log(book)
     const handleUpdateBook=e=>{
         e.preventDefault()
         const formData =new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries())
-        console.log(initialData)
+        // console.log(initialData)
         const {rating, quantity, ...updateBookData }=initialData
        
 
         updateBookData.rating =parseInt(rating)
         updateBookData.quantity= parseInt(quantity)
-        console.log(updateBookData)
+        // console.log(updateBookData)
         // axios.put(`${import.meta.env.VITE_Project_Api_Url}/book/${book._id}`, updateBookData)
         // .then(res=>console.log(res.data))
         fetch(`${import.meta.env.VITE_Project_Api_Url}/book/${book._id}`,{

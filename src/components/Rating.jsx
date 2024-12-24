@@ -8,7 +8,7 @@ const  Rating=()=> {
 
   const ratingChanged = (newRating) => {
     setRating(newRating);
-    console.log(newRating);
+    // console.log(newRating);
   };
 
   return (

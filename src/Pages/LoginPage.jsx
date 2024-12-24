@@ -17,7 +17,7 @@ const LoginPage = () => {
         const password= form.password.value
         signinUser(email, password)
         .then(result=>{
-            console.log(result.user)
+            // console.log(result.user)
             toast.success("Login Success")
             navigate(location.state? location.state:"/")
 
@@ -33,12 +33,12 @@ const LoginPage = () => {
     const handleSocial=()=>{
         socialLogin()
         .then(result=>{
-            console.log()
+            // console.log()
             navigate(location.state? location.state:"/")
             toast.success("Login Success")
         })
         .catch(err=>{
-            console.log(err)
+            // console.log(err)
             toast.error("Login Failed")
         })
     }

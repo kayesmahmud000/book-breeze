@@ -7,7 +7,7 @@ import { Fade } from 'react-awesome-reveal';
 
 const Category = () => {
     const [categories, setCategories]=useState([])
-    console.log(categories)
+    // console.log(categories)
     useEffect(()=>{
         axios.get(`${import.meta.env.VITE_Project_Api_Url}/category`)
         .then(res=>setCategories(res.data))

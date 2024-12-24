@@ -13,14 +13,14 @@ const AddBookPage = () => {
         e.preventDefault()
         const formData =new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries())
-        console.log(initialData)
+        // console.log(initialData)
         const {rating, quantity, ...bookData }=initialData
        
 
         bookData.rating =parseInt(rating)
         bookData.quantity= parseInt(quantity)
         bookData.author_email= user.email
-        console.log(bookData)
+        // console.log(bookData)
         
 
          axios.post(`${import.meta.env.VITE_Project_Api_Url}/add-book`,bookData)

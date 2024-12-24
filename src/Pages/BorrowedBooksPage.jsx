@@ -13,7 +13,7 @@ const BorrowedBooksPage = () => {
     const {user}= useAuth()
     const axiosSecure= useAxiosSecure()
   
-    console.log(borrowBooks)
+    // console.log(borrowBooks)
     useEffect(()=>{
         axiosSecure.get(`/borrow-book?email=${user.email}` , {withCredentials:true})
         .then(res=>setBorrowBook(res.data))
@@ -25,7 +25,7 @@ const BorrowedBooksPage = () => {
 
             axios.patch(`${import.meta.env.VITE_Project_Api_Url}/return-book/${id}`,)
             .then(res=>{
-                console.log(res.data)
+                // console.log(res.data)
                 if(res.data.deletedCount){
                     toast.success('Book return from borrow list');
                 }
@@ -35,7 +35,7 @@ const BorrowedBooksPage = () => {
             setBorrowBook(returnBook);
             
         }catch(error){
-            console.log(error)
+            // console.log(error)
         }
     }
 

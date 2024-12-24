@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily:{'Lato': ['Lato', 'sans-serif', ]} 
   },
   plugins: [
     require('daisyui'),

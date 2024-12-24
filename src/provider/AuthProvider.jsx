@@ -36,13 +36,13 @@ const AuthProvider = ({children}) => {
 
                 axios.post(`${import.meta.env.VITE_Project_Api_Url}/jwt`, user , {withCredentials:true} )
                 .then(res=>{
-                    console.log(res.data)
+                    // console.log(res.data)
                     setLoader(false)
                 })
             }else{
                 axios.post(`${import.meta.env.VITE_Project_Api_Url}/logout`, {}, {withCredentials:true})
                 .then(res=>{
-                    console.log('logout', res.data)
+                    // console.log('logout', res.data)
                     setLoader(false)
                 })
             }

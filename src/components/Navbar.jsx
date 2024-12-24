@@ -23,7 +23,7 @@ const Navbar = () => {
 
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
     const link = <>
