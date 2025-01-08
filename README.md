@@ -43,7 +43,7 @@ Book Breeze is a comprehensive library management system designed to facilitate 
 - `firebase`: Firebase SDK to use Firebase services.
 
   ## Main Tecnology
-- **Frontend**: Next.js, React.js, Tailwind CSS
+- **Frontend**:  React.js, Tailwind CSS
 
 - **Backend**: Node.js, Express.js
 
