@@ -91,7 +91,7 @@ Book Breeze is a comprehensive library management system designed to facilitate 
 git clone https://github.com/kayesmahmud000/library-management-system-
 
 # Navigate into the project directory
-cd navi-visa
+cd library-management-system-
 
 # Install the dependencies
 `npm install`
