@@ -50,13 +50,13 @@ const AddBookPage = () => {
                 <form onSubmit={handleAddBook} className="card-body">
                     {/* 1st row */}
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text"> Book Image</span>
                             </label>
                             <input type="text" name="photo" placeholder="Book image url" className="input input-bordered w-full" required />
                         </div>
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control w-full md:w-1/2 ">
                             <label className="label">
                                 <span className="label-text">Book Name</span>
                             </label>
@@ -65,7 +65,7 @@ const AddBookPage = () => {
                     </div>
                     {/* 2nd row */}
                     <div className="md:flex mb-4">
-                        <div className="form-control md:w-1/2 mr-5">
+                        <div className="form-control w-full md:w-1/2   mr-5">
                             <label className="label">
                                 <span className="label-text">Category </span>
                             </label>
@@ -77,7 +77,7 @@ const AddBookPage = () => {
                                 <option value="Sci-Fi">Sci-Fi</option>
                             </select>
                         </div>
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control  w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Author Name</span>
                             </label>
@@ -86,13 +86,13 @@ const AddBookPage = () => {
                     </div>
                      {/* 3rd row */}
                     <div className="md:flex mb-4">
-                    <div className="form-control md:w-1/2 mr-5">
+                    <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text">Rating</span>
                             </label>
                             <input type="number" name="rating" placeholder="rating (1-5)" className="input input-bordered w-full" min={1} max={5} required />
                         </div>
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Quantity</span>
                             </label>
@@ -101,14 +101,14 @@ const AddBookPage = () => {
                     </div>
                      {/* 4th row */}
                     <div className="md:flex mb-4">
-                    <div className="form-control md:w-1/2 mr-5">
+                    <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text">Short Description</span>
                             </label>
                             <textarea name='description' className="textarea textarea-bordered" placeholder="description" required></textarea>
                         </div>
                         
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Book Content</span>
                             </label>

@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import CategoryBookPage from "../Pages/CategoryBookPage";
 import DetailsPage from "../Pages/DetailsPage";
 import ErrorPage from "../Pages/ErrorPage";
+import AboutPage from "../Pages/AboutPage";
+import Contact from "../Pages/Contact";
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
         {
             path:'/addBook',
             element:<PrivateRoute><AddBookPage></AddBookPage></PrivateRoute>
+        },
+        {
+            path:'/about',
+            element:<AboutPage></AboutPage>
+        }, 
+        {
+            path:'/contact',
+            element:<Contact></Contact>
         },
         {
             path:"/updatePage/:id",
@@ -59,6 +69,8 @@ const router = createBrowserRouter([
             path:'/register',
             element:<RegisterPage></RegisterPage>
         },
+       
+       
       ]
     },
   ]);

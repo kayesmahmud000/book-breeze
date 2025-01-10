@@ -11,13 +11,13 @@ const BookCard = ({book}) => {
     }
     return (
         <div>
-            <div className="card  h-[550px] rounded-none hover:shadow-2xl border-gray-400 border" data-aos="zoom-in" data-aos-duration="3000">
-                <figure>
-                    <img className='w-full h-[380px] '
+            <div className="relative group rounded-lg overflow-hidden shadow-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-2xl h-full flex flex-col justify-between" data-aos="zoom-in" data-aos-duration="3000">
+                <figure className='h-96 w-full overflow-hidden'>
+                    <img className='rounded-t-lg object-cover w-full h-full group-hover:scale-110 transition-all duration-500 ease-in-out brightness-100 group-hover:brightness-50 '
                         src={photo}
                         alt={name} />
                 </figure>
-                <div className="my-5 flex flex-col flex-wrap px-4">
+                <div className="my-5 flex flex-col flex-wrap px-4 flex-grow">
                     <h2 className=" md:text-xl font-bold">
                        {name}
                        <div className="badge badge-outline font-normal ml-2">{category}</div> 
@@ -31,8 +31,8 @@ const BookCard = ({book}) => {
                         {/* <div className=" flex items-center font-semibold"><span className='mr-1'>Rating:</span> <Rating ></Rating> <span className='ml-1 mt-1'>{rating}</span> </div> */}
                        
                     </div>
-                    <div className='flex mt-2 justify-end'>
-                       <Link to={`/updatePage/${book._id}`}> <button onClick={handleUpdateBook} className='btn btn-sm bg-[#e63746] rounded-md border-none text-white hover:bg-white hover:text-black'>Update</button></Link>
+                    <div className='flex mt-auto justify-end p-4'>
+                       <Link to={`/updatePage/${book._id}`}> <button onClick={handleUpdateBook} className='btn btn-sm bg-[#4DA1A9] rounded-md border-none text-white hover:bg-white hover:text-black'>Update</button></Link>
                     </div>
                 </div>
             </div>

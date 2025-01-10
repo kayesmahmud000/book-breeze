@@ -9,7 +9,7 @@ AOS.init();
 const MainLayout = () => {
     return (
         <div>
-           <header className='w-11/12  sticky top-0 z-50 bg-white opacity-80   shadow-sm  mx-auto  py-5 mb-10 '>
+           <header className='  sticky top-0 z-50 bg-[#4DA1A9] bg-opacity-50   shadow-sm    py-5 mb-5 '>
             <Navbar></Navbar>
            </header>
            <main className=' min-h-[780px]'>

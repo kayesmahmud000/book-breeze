@@ -1,6 +1,7 @@
 import { FaArrowRight } from 'react-icons/fa';
 import BannerImg from '../assets/banner1.png'
 import { motion } from "motion/react"
+import { Link } from 'react-router-dom';
 
 
 const Banner1 = () => {
@@ -27,7 +28,7 @@ const Banner1 = () => {
                         <p className="py-6  text-xs lg:text-lg text-gray-200">
                             From timeless classics to modern bestsellers, our library offers a world of books waiting to be discovered. Find your next favorite read and embark on new adventures today
                         </p>
-                        <button className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button>
+                       <Link to={'/about'}> <button className="btn bg-[#4DA1A9] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button></Link>
                     </div>
                     <img
                         src={BannerImg}

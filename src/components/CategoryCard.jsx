@@ -9,7 +9,7 @@ const CategoryCard = ({ category }) => {
     }
     return (
         <div>
-            <div className="card border hover:border-gray-500 hover:bg-gray-100 hover:shadow-2xl"  data-aos="zoom-out" data-aos-duration="1500">
+            <div className="card  hover:border-gray-500 hover:bg-gray-100 overflow-hidden shadow-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-2xl"  data-aos="zoom-out" data-aos-duration="1500">
                 <div className="card-body items-center text-center">
                     <img src={category.img} className='w-10 object-cover lg:w-16' alt="" />
                     <div className="divider"></div>

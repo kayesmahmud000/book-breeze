@@ -1,6 +1,7 @@
 import { FaArrowRight } from 'react-icons/fa';
 import bannerImg2 from '../assets/bnner2.png'
 import { Typewriter } from 'react-simple-typewriter';
+import { Link } from 'react-router-dom';
 
 const Banner2 = () => {
     return (
@@ -26,7 +27,7 @@ const Banner2 = () => {
                         <p className="py-6 text-xs lg:text-lg">
                         Our diverse collection spans genres, eras, and interests, ensuring you'll find exactly what you're looking for. <span className='font-bold text-lg'>Book Breeze.</span>
                         </p>
-                        <button className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button>
+                        <Link to={'/about'}> <button className="btn bg-[#4DA1A9] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button></Link>
                     </div>
                 </div>
             </div>

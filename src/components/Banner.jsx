@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
@@ -28,7 +29,7 @@ const Banner = () => {
                         <p className="mb-5  text-xs lg:text-lg">
                         <span className='font-bold text-lg'>Book Breeze</span> is more than a library; it's a gateway to endless possibilities. Start your reading journey with us and become part of a community that celebrates the love of books.
                         </p>
-                        <button className="btn bg-[#e63746] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button>
+                        <Link to={'/about'}> <button className="btn bg-[#4DA1A9] border-none text-white hover:bg-white hover:text-black">Explore <FaArrowRight /></button></Link>
                     </div>
                 </div>
             </div>
