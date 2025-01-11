@@ -7,7 +7,7 @@ const ClintReview = () => {
     return (
         <div>
             <Fade direction="down">
-            <div className='flex justify-center items-start mt-16 -mb-5'>
+            <div className='flex justify-center items-start -mb-5'>
                 <p className='text-center font-bold text-gray-500 flex gap-1 items-center'><FaArrowRight /> Review </p>
             </div>
             </Fade>

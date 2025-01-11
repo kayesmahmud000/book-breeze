@@ -13,6 +13,7 @@ import DetailsPage from "../Pages/DetailsPage";
 import ErrorPage from "../Pages/ErrorPage";
 import AboutPage from "../Pages/AboutPage";
 import Contact from "../Pages/Contact";
+import ServiceDetails from "../Pages/ServiceDetails";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         {
             path:'/contact',
             element:<Contact></Contact>
+        },
+        {
+            path:'/serviceDetails/:id',
+            element:<ServiceDetails></ServiceDetails>,
+            loader: ({params})=>fetch(`${import.meta.env.VITE_Project_Api_Url}/service/${params.id}`)
         },
         {
             path:"/updatePage/:id",

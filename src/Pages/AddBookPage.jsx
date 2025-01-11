@@ -100,7 +100,7 @@ const AddBookPage = () => {
                         </div>
                     </div>
                      {/* 4th row */}
-                    <div className="md:flex mb-3">
+                    <div className="md:flex mb-4">
                     <div className="form-control w-full md:w-1/2 mr-5">
                             <label className="label">
                                 <span className="label-text">Short Description</span>

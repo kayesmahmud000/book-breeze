@@ -3,6 +3,7 @@
 import Category from '../components/Category';
 import ClintReview from '../components/ClintReview';
 import LeatestBooks from '../components/LeatestBooks';
+import OurService from '../components/OurService';
 import Slider from '../components/Slider';
 import TitleHelmet from '../components/TitleHelmet';
 
@@ -18,6 +19,9 @@ const HomePage = () => {
           </section>
           <section className='container mx-auto my-16 px-4'>
             <LeatestBooks></LeatestBooks>
+          </section>
+          <section className='container mx-auto my-16 px-4'>
+            <OurService></OurService>
           </section>
           <section className='container mx-auto my-16 px-4'>
             <ClintReview></ClintReview>

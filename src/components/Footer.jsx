@@ -8,7 +8,7 @@ const Footer = () => {
                 <img src={logo} className="w-20" alt="" />
                 <h1 className="font-bold md:text-3xl">BOOK BREEZE.</h1>
                 <p>Explore a World of Books</p>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by Book Breeze</p>
                 </aside>
                 <nav>
                     <div className="grid grid-flow-col gap-4">

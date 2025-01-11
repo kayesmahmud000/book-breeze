@@ -41,7 +41,7 @@ const AllBookPage = () => {
                 </select>
                 <button
                     onClick={handleFilterClick}
-                    className="btn bg-[#e63746] text-white hover:bg-[#c12939]"
+                    className="btn btn-md  bg-[#4DA1A9] rounded-md border-none text-white hover:bg-white hover:text-black "
                 >
                     {showAvailable ? 'Show All Books' : 'Show Available Books'}
                 </button>
