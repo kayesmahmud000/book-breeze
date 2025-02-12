@@ -74,7 +74,7 @@ const BookCard = ({ book }) => {
 
                         {/* ⭐ Interactive Rating System */}
                         <div className="review-rating flex items-center text-yellow-500">
-                            <span className='font-semibold text-black mr-1'>Rating:</span>
+                            <span className='font-semibold  mr-1'>Rating:</span>
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <span
                                     key={star}
